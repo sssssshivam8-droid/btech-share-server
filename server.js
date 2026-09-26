@@ -23,9 +23,10 @@ function leaveRoom(ws) {
 
 function relay(ws, raw) {
   if (!ws.room || !rooms.has(ws.room)) return;
+  const text = raw.toString(); // force text frame so browsers get a string, not a Blob
   for (const peer of rooms.get(ws.room)) {
     if (peer !== ws && peer.readyState === WebSocket.OPEN) {
-      peer.send(raw);
+      peer.send(text);
     }
   }
 }
