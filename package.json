@@ -1,0 +1,15 @@
+{
+  "name": "btech-share-signaling",
+  "version": "1.0.0",
+  "description": "Minimal WebRTC signaling server for BTECH Share",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.17.0"
+  }
+}
